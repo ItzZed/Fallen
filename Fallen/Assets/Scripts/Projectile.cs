@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour {
 
     public float speed;
 
+    public GameObject enemy;
+
     private Vector2 target;
 
     void Start() {
@@ -19,6 +21,9 @@ public class Projectile : MonoBehaviour {
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
         if(Vector2.Distance(transform.position, target) < 0.2f) {
+
+            // Make Enemy if Projectile Misses
+            // Instantiate(enemy, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
 

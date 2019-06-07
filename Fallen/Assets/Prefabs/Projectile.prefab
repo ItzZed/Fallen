@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  enemy: {fileID: 2017183687051246146, guid: 6cb9919820c98734c9d8ea689876a26a, type: 3}
 --- !u!58 &2360236758872932807
 CircleCollider2D:
   m_ObjectHideFlags: 0

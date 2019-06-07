@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour {
 
     public float speed;
 
+    public GameObject effect;
+
     private Player player;
     private Transform playerPos;
 
@@ -25,7 +27,7 @@ public class Enemy : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         
         if(other.CompareTag("Player")) {
-
+            Instantiate(effect, transform.position, Quaternion.identity);
             player.health--;
             Debug.Log(player.health);
             Destroy(gameObject);
@@ -34,6 +36,7 @@ public class Enemy : MonoBehaviour {
 
         if(other.CompareTag("Projectile")) {
 
+            Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
 
