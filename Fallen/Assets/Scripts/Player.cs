@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
 
    void Update() {
 
-        healthDisplay.text = "HP : " + health;
+        // healthDisplay.text = "HP : " + health;
 
         if(health <= 0) {
 

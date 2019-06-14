@@ -10,11 +10,13 @@ public class Enemy : MonoBehaviour {
 
     private Player player;
     private Transform playerPos;
+    private HealthSystem playerHealthSystem;
 
     void Start() {
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHealthSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
 
     }
 
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour {
         if(other.CompareTag("Player")) {
             Instantiate(effect, transform.position, Quaternion.identity);
             player.health--;
+            playerHealthSystem.TakeDamage(-1);
             Debug.Log(player.health);
             Destroy(gameObject);
 
